@@ -1,10 +1,10 @@
 """ This represents a double linked list node"""
 
 
-class DoubleNode():
+class DoubleLinkedListNode():
     """ This represents a single node of a double linked list """
 
-    def __init__(self, value):
+    def __init__(self, value, next=None, prev=None):
         self.value = value
-        self.next = None
-        self.prev = None
+        self.next = next
+        self.prev = prev

@@ -4,6 +4,6 @@
 class NodeList():
     """ This represents a single node of a singly linked list"""
 
-    def __init__(self, value):
+    def __init__(self, value, next_value=None):
         self.value = value
-        self.next = None
+        self.next = next_value
