@@ -1,5 +1,4 @@
-from hashlib import new
-from DoublyLinkedListNode import DoubleLinkedListNode
+from DoubleNode import DoubleLinkedListNode
 
 
 class DoublyLinkedList():

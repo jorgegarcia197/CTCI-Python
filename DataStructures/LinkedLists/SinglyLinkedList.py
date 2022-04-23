@@ -1,6 +1,6 @@
 """ Singly Linked List """
 
-from SinglyLinkedListNode import NodeList
+from SingleNode import NodeList
 
 
 class SinglyLinkedList:
