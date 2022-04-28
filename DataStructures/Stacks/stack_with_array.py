@@ -1,8 +1,6 @@
 """ Class that implements a stack using an array. """
 
 
-from re import template
-
 
 class Stack():
     def __init__(self):

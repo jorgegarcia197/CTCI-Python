@@ -21,8 +21,8 @@ def sum_list(list1, list2):
         else:
             sum_value = current1.val + current2.val + remainder
             remainder = sum_value // 10
-        current1 = current1.next
-        current2 = current2.next
+            current1 = current1.next
+            current2 = current2.next
         add = sum_value % 10
 
         # if node is None add head, else the next node
@@ -31,6 +31,11 @@ def sum_list(list1, list2):
         else:
             node.next = ListNode(add)
             node = node.next
+            # check the last carry
+    if remainder != 0:
+        node.next = ListNode(remainder)
+        node = node.next
+
     return head
 
 
