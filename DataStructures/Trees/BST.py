@@ -29,12 +29,25 @@ def traversePreOrder(node, output):
     return output
 
 
+def traversePostOrder(node, output):
+    if (node.left):
+        traversePreOrder(node.left, output)
+    if (node.right):
+        traversePreOrder(node.right, output)
+    output.append(node.value)
+    return output
+
+
 def DFSPreOrder(root, output):
     return traversePreOrder(root, output)
 
 
 def DFSinOrder(root, output):
     return traverseInOrder(root, output)
+
+
+def DFSPostOrder(root, output):
+    return traversePostOrder(root, output)
 
 
 class BinarySearchTree():
@@ -80,10 +93,10 @@ class BinarySearchTree():
         currentNode = self.root
         parentNode = None
         while currentNode:
-            if value < currentNode.valueue:
+            if value < currentNode.value:
                 parentNode = currentNode
                 currentNode = currentNode.left
-            elif value > currentNode.valueue:
+            elif value > currentNode.value:
                 parentNode = currentNode
                 currentNode = currentNode.right
             elif currentNode == value:
@@ -148,4 +161,4 @@ if __name__ == "__main__":
     myTree.insert(15)
     myTree.insert(1)
 
-    print(traversePreOrder(myTree.root, []))
+    print(traversePostOrder(myTree.root, []))

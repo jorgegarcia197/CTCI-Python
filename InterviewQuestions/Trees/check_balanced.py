@@ -19,7 +19,7 @@ def isBalanced(root: Optional[TreeNode]) -> bool:
         return False
     else:
         # traverse through the next subtrees
-        return isBalanced(root.left) and isBalanced(root.left)
+        return isBalanced(root.left) and isBalanced(root.right)
 
 
 def getHeight(root):
