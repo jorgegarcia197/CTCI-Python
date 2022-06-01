@@ -161,4 +161,4 @@ if __name__ == "__main__":
     myTree.insert(15)
     myTree.insert(1)
 
-    print(traversePostOrder(myTree.root, []))
+    print(DFSPreOrder(myTree.root, []))
