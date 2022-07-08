@@ -1,7 +1,5 @@
 
 
-from sklearn.linear_model import PassiveAggressiveClassifier
-
 
 def max_sum_adjacent(array):
     max_sum_odd = 0
