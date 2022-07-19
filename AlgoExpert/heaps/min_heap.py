@@ -1,4 +1,3 @@
-import math
 # Do not edit the class below except for the buildHeap,
 # siftDown, siftUp, peek, remove, and insert methods.
 # Feel free to add new properties and methods to the class.
@@ -11,30 +10,32 @@ class MinHeap:
 
     def buildHeap(self, array):
         # Write your code here.
-        parentNodes = (len(array-2) // 2)
-        for i in range(parentNodes, -1, -1):
-            self.siftDown(i, len(array), array)
+        parentNodes = (len(array)-2) // 2
+        for currentIdx in reversed(range(parentNodes+1)):
+            self.siftDown(currentIdx, len(array)-1, array)
         return array
+    def is_empty(self):
+        return len(self.heap) == 0
 
     def siftDown(self, idx, endIdx, heap):
         childOne = idx * 2 + 1
         while childOne <= endIdx:
-            childTwo = idx * 2 + 2 if idx * 2 + 2 < endIdx else -1
-            if childTwo != -1 and heap[childOne] > heap[childTwo]:
+            childTwo = idx * 2 + 2 if idx * 2 + 2 <= endIdx else -1
+            if childTwo != -1 and heap[childTwo] < heap[childOne]:
                 to_swap = childTwo
             else:
                 to_swap = childOne
             if heap[to_swap] < heap[idx]:
-                self.swap(idx, to_swap)
+                self.swap(idx, to_swap, heap)
                 idx = to_swap
                 childOne = idx * 2 + 1
             else:
-                break
+                return
 
     def siftUp(self, idx, heap):
-        parentIdx = math.floor((idx - 1) / 2)
+        parentIdx = (idx - 1) // 2
         while idx > 0 and heap[idx] < heap[parentIdx]:
-            self.swap(idx, parentIdx)
+            self.swap(idx, parentIdx, heap)
             idx = parentIdx
             parentIdx = (idx - 1) // 2
 
@@ -45,7 +46,7 @@ class MinHeap:
     def remove(self):
         # Write your code here.
         # swap first and last
-        self.swap(0, len(self.heap) - 1)
+        self.swap(0, len(self.heap) - 1, self.heap)
         removed_value = self.heap.pop()
         self.siftDown(0, len(self.heap) - 1, self.heap)
         return removed_value
