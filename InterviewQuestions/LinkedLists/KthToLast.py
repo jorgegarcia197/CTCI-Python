@@ -54,7 +54,7 @@ def remove_kth_to_last_node(head: NodeList, target: int):
         for i in range((count-target)-1):
             previous = current
             current = current.next
-        previous.next = current.next.next
+        previous.next = current.next
     return head
 
 
