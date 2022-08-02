@@ -31,9 +31,10 @@ def BinarySearch2(array, target):
     right = len(array)-1
     while left <= right:
         middle = math.floor((left+right)/2)
+        
         if target == array[middle]:
             return middle
-        elif target < array[middle]:
+        elif target < array[middle]:    
             right = middle-1
             continue
         elif target > array[middle]:

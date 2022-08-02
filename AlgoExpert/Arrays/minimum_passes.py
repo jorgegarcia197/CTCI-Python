@@ -1,6 +1,3 @@
-from hashlib import new
-from inspect import stack
-from sklearn import neighbors
 
 
 directions = [[-1, 0], [0, 1], [1, 0], [0, -1]]
